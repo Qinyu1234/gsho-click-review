@@ -1,0 +1,382 @@
+[
+    {
+        "categoryChild": [
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "婚恋/两性",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "文学",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "经管",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "畅读VIP",
+                        "categoryId": 4
+                    }
+                ],
+                "categoryName": "电子书",
+                "categoryId": 1
+            }
+        ],
+        "categoryName": "图书、音像、数字商品",
+        "categoryId": 1
+    },
+    {
+        "categoryChild": [
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "免费",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "小说",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "励志与成功",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "婚恋/两性",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "文学",
+                        "categoryId": 5
+                    },
+                    {
+                        "categoryName": "经管",
+                        "categoryId": 6
+                    },
+                    {
+                        "categoryName": "畅读VIP",
+                        "categoryId": 7
+                    }
+                ],
+                "categoryName": "电子书1",
+                "categoryId": 1
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "通俗流行",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "古典音乐",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "摇滚说唱",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "爵士蓝调",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "乡村民谣",
+                        "categoryId": 5
+                    },
+                    {
+                        "categoryName": "有声读物",
+                        "categoryId": 6
+                    }
+                ],
+                "categoryName": "数字音乐",
+                "categoryId": 2
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "音乐",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "影视",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "游戏",
+                        "categoryId": 3
+                    }
+                ],
+                "categoryName": "音像",
+                "categoryId": 3
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "小说",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "文学",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "青春文学",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "传记",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "艺术",
+                        "categoryId": 5
+                    }
+                ],
+                "categoryName": "文艺",
+                "categoryId": 4
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "历史",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "心理学",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "政治/军事",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "国学/古籍",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "哲学/宗教",
+                        "categoryId": 5
+                    },
+                    {
+                        "categoryName": "社会科学",
+                        "categoryId": 6
+                    }
+                ],
+                "categoryName": "人文社科",
+                "categoryId": 5
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "经济",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "金融与投资",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "管理",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "励志与成功",
+                        "categoryId": 4
+                    }
+                ],
+                "categoryName": "经管励志",
+                "categoryId": 6
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "家庭与育儿",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "旅游/地图",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "烹饪/美食",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "时尚/美妆",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "家居",
+                        "categoryId": 5
+                    },
+                    {
+                        "categoryName": "婚恋与两性",
+                        "categoryId": 6
+                    },
+                    {
+                        "categoryName": "娱乐/休闲",
+                        "categoryId": 7
+                    },
+                    {
+                        "categoryName": "健身与保健",
+                        "categoryId": 8
+                    },
+                    {
+                        "categoryName": "动漫/幽默",
+                        "categoryId": 9
+                    },
+                    {
+                        "categoryName": "体育/运动 ",
+                        "categoryId": 10
+                    }
+                ],
+                "categoryName": "生活",
+                "categoryId": 7
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "科普",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "IT",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "建筑",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "医学",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "工业技术",
+                        "categoryId": 5
+                    },
+                    {
+                        "categoryName": "电子/通信",
+                        "categoryId": 6
+                    },
+                    {
+                        "categoryName": "农林",
+                        "categoryId": 7
+                    },
+                    {
+                        "categoryName": "科学与自然",
+                        "categoryId": 8
+                    }
+                ],
+                "categoryName": "科技",
+                "categoryId": 8
+            },
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "少儿",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "0-2岁",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "3-6岁",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "7-10岁",
+                        "categoryId": 4
+                    },
+                    {
+                        "categoryName": "11-14岁",
+                        "categoryId": 5
+                    }
+                ],
+                "categoryName": "少儿",
+                "categoryId": 9
+            }
+        ],
+        "categoryName": "家用电器",
+        "categoryId": 2
+    },
+    {
+        "categoryChild": [
+            {
+                "categoryChild": [
+                    {
+                        "categoryName": "婚恋/两性",
+                        "categoryId": 1
+                    },
+                    {
+                        "categoryName": "文学",
+                        "categoryId": 2
+                    },
+                    {
+                        "categoryName": "经管",
+                        "categoryId": 3
+                    },
+                    {
+                        "categoryName": "畅读VIP",
+                        "categoryId": 4
+                    }
+                ],
+                "categoryName": "电子书",
+                "categoryId": 1
+            }
+        ],
+        "categoryName": "图书、音像、数字商品",
+        "categoryId": 3
+    },
+    {
+        "categoryChild": [
+            {
+                "categoryChild": [
+                    {"categoryName": "充值","categoryId": 1}
+                ],
+                "categoryName": "充值",
+                "categoryId": 1
+            },
+            {
+                "categoryChild": [
+                    {"categoryName": "免费","categoryId": 1},
+                    {"categoryName": "小说","categoryId": 2},
+                    {"categoryName": "励志与成功","categoryId": 3},
+                    {"categoryName": "婚恋/两性","categoryId": 4},
+                    {"categoryName": "文学","categoryId": 5},
+                    {"categoryName": "经管","categoryId": 6},
+                    {"categoryName": "畅读VIP","categoryId": 7}
+                ],
+                "categoryName": "电子书2",
+                "categoryId": 2
+            },
+            {
+                "categoryChild": [
+                    {"categoryName": "通俗流行","categoryId": 1},
+                    {"categoryName": "古典音乐","categoryId": 2},
+                    {"categoryName": "摇滚说唱","categoryId": 3},
+                    {"categoryName": "爵士蓝调","categoryId": 4},
+                    {"categoryName": "乡村民谣","categoryId": 5},
+                    {"categoryName": "有声读物","categoryId": 6}
+                ],
+                "categoryName": "数字音乐",
+                "categoryId": 3
+            },
+            {
+                "categoryChild": [
+                    {"categoryName": "音乐","categoryId": 1},
+                    {"categoryName": "影视","categoryId": 2},
+                    {"categoryName": "教育音像","categoryId": 3},
+                    {"categoryName": "游戏","categoryId": 4}
+                ],
+                "categoryName": "音像",
+                "categoryId": 4
+            }
+        ],
+        "categoryName": "手机、数码、充值",
+        "categoryId": 4
+    }
+]

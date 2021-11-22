@@ -3,7 +3,7 @@ import Register from "@/pages/Register";
 import Search from "@/pages/Search";
 export default [
     {
-        path:'/',
+        path:'',
         component:Home
     },
     {

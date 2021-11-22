@@ -15,6 +15,9 @@ export default {
   components: {
     Header,
     Footer
+  },
+  mopunted(){
+      this.$store.dispatch('getCategoryList')
   }
 }
 </script>
