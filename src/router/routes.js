@@ -4,14 +4,17 @@ import Search from "@/pages/Search";
 export default [
     {
         path:'',
+        name:'home',
         component:Home
     },
     {
+        name:'register',
         path:'/register',
         component:Register
     },
     {
-        path:'/search',
+        name:'search',
+        path:'/search/:keyword?',
         component:Search
     }
 ]

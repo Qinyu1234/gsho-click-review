@@ -21,6 +21,11 @@
         mode:'history',
         routes
     })
+
+    this.$router.push({
+        name:'',
+        query:`/search/${this.keyword}`
+    })
 //#endregion
 
 //#region  

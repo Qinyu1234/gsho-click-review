@@ -33,8 +33,8 @@
             </h1>
             <div class="searchArea">
                 <form action="###" class="searchForm">
-                    <input type="text" id="autocomplete" class="input-error input-xxlarge" />
-                    <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                    <input type="text" id="autocomplete" v-model.trim="keyword" class="input-error input-xxlarge" />
+                    <button class="sui-btn btn-xlarge btn-danger" @click.prevent="search" type="button">搜索</button>
                 </form>
             </div>
         </div>
@@ -43,6 +43,25 @@
 <script>
     export default {
         name:'Header',
+        data(){
+            return{
+                keyword:''
+            }
+        },
+        methods:{
+            search(){
+               const location = {
+                    name:'search',
+                    query:`/search/${this.keyword}`
+                }
+                
+                if (this.$route.name === "search") {
+                    this.$router.replace(location);
+                } else {
+                    this.$router.push(location);
+                }
+            }
+        }
     }
 </script>
 <style lang="less" scoped>
