@@ -2,14 +2,15 @@ import axios from 'axios'
 
 const service = axios.create({
     baseURL:'/mock',
-    timeout:60000
+    timeout:20000
 })
 
 service.interceptors.request.use((config)=>{
     return config
 })
 
-service.interceptors.response.use(res=>{
+service.interceptors.response.use(
+res=>{
     return res.data
 },
 error=>{

@@ -1,18 +1,17 @@
-import ajax from "./ajax";
+// import ajax from "./ajax";
 import mockAjax from "./mockAjax";
 
 // const ss = ()=>ajax('')
 export const reqCategoryList = ()=> mockAjax('categoryList')
-
+export const reqBannerList = () => mockAjax('/bannerList')
+export const reqRecommends = ()=> mockAjax('/recommends')
+export const reqFloors = ()=> mockAjax('/floors')
+export const reqBrands = ()=> mockAjax('/brands')
 // //广告轮播列表
 // export const reqBannerList_old =() => ajax('/cms/banner')
 
 
 // //mock接口函数
-// export const reqBannerList = () => mockAjax('/bannerList')
-// export const reqRecommends = ()=> mockAjax('/recommends')
-// export const reqFloors = ()=> mockAjax('/floors')
-
 // export const reqSearchList = (searchParams)=>mockAjax({
 //     url:'/searchList',
 //     mothod:'post',

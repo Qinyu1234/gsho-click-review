@@ -4,28 +4,17 @@
         <div class="sortList clearfix">
             <div class="center">
                 <!--banner轮播-->
-                <div class="swiper-container" id="mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="/images/home/banner1.jpg" />
-                        </div>
-                        <!-- <div class="swiper-slide">
-                            <img src="/images/home/banner2.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/images/home/banner3.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/images/home/banner4.jpg" />
-                        </div> -->
-                    </div>
-                    <!-- 如果需要分页器 -->
-                    <div class="swiper-pagination"></div>
+                <template>
+                    <swiper ref="mySwiper" :options="swiperOptions">
+                        <swiper-slide v-for="(banner,index) in bannerList.imgsUrl" :key="index">
+                            <img :src="banner" />
+                        </swiper-slide>
 
-                    <!-- 如果需要导航按钮 -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                        <div class="swiper-pagination" slot="pagination"></div>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                    </swiper>
+                </template>
             </div>
             <div class="right">
                 <div class="news">
@@ -35,83 +24,54 @@
                     </h4>
                     <div class="clearix"></div>
                     <ul class="news-list unstyled">
-                        <li>
-                            <span class="bold">[特惠]</span>备战开学季 全民半价购数码
-                        </li>
-                        <li>
-                            <span class="bold">[公告]</span>备战开学季 全民半价购数码
-                        </li>
-                        <li>
-                            <span class="bold">[特惠]</span>备战开学季 全民半价购数码
-                        </li>
-                        <li>
-                            <span class="bold">[公告]</span>备战开学季 全民半价购数码
-                        </li>
-                        <li>
-                            <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+                        <li v-for="(item,index) in bannerList.ad" :key="index">
+                            <span class="bold">{{item.title}}</span>{{item.text}}
                         </li>
                     </ul>
                 </div>
                 <ul class="lifeservices">
-                    <li class=" life-item ">
+                    <li class=" life-item " v-for="(item,index) in bannerList.name" :key="index">
                         <i class="list-item"></i>
-                        <span class="service-intro">话费</span>
-                    </li>
-                    <li class=" life-item ">
-                        <i class="list-item"></i>
-                        <span class="service-intro">机票</span>
-                    </li>
-                    <li class=" life-item ">
-                        <i class="list-item"></i>
-                        <span class="service-intro">电影票</span>
-                    </li>
-                    <li class=" life-item ">
-                        <i class="list-item"></i>
-                        <span class="service-intro">游戏</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">彩票</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">加油站</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">酒店</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">火车票</span>
-                    </li>
-                    <li class=" life-item ">
-                        <i class="list-item"></i>
-                        <span class="service-intro">众筹</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">理财</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">礼品卡</span>
-                    </li>
-                    <li class=" life-item">
-                        <i class="list-item"></i>
-                        <span class="service-intro">白条</span>
+                        <span class="service-intro">{{item}}</span>
                     </li>
                 </ul>
                 <div class="ads">
-                    <img src="/images/home/ad1.png" />
+                    <img :src="bannerList.adimgUrl" />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
     export default {
         name:'ListContainer',
+        data(){
+            return{
+                swiperOptions:{
+                    loop: true, // 循环模式选项
+                    autoplay:{
+                        delay:1000,
+                         disableOnInteraction: false,
+                    },
+                    // 如果需要分页器
+                    pagination: {
+                        el: ".swiper-pagination",
+                    },
+
+                    // 如果需要前进后退按钮
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                }
+            }
+        },
+        computed:{
+            ...mapState({
+                bannerList:state=>state.home.bannerList
+            })
+        }
     }
 </script>
 <style lang="less" scoped>

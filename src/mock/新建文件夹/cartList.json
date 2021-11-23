@@ -1,0 +1,37 @@
+[
+    {
+        "id": 61,
+        "userId": "2",
+        "skuId": 4,
+        "cartPrice": 5999,
+        "skuNum": 4,
+        "imgUrl": "/images/shopCart/goods1.png",
+        "skuName": "Apple iPhone 11 (A2223) ",
+        "isChecked": 1,
+        "skuPrice": 5999
+    },
+    {
+        "id": 62,
+        "userId": "2",
+        "skuId": 2,
+        "cartPrice": 5499,
+        "skuNum": 1,
+        "imgUrl": "/images/shopCart/goods2.png",
+        "skuName": "Apple iPhone 11 (A2223) 64GB 红色",
+        "isChecked": 1,
+        "skuPrice": 5499
+    },
+    {
+        "id": 63,
+        "userId": "2",
+        "skuId": 2,
+        "cartPrice": 5499,
+        "skuNum": 6,
+        "imgUrl": "/images/shopCart/goods3.png",
+        "skuName": "Apple iPhone 12X 128GB 黑色",
+        "isChecked": 1,
+        "skuPrice": 7599
+    }
+]
+
+    

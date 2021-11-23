@@ -16,7 +16,7 @@ export default {
     Header,
     Footer
   },
-  mopunted(){
+  mounted(){
       this.$store.dispatch('getCategoryList')
   }
 }
