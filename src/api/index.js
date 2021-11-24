@@ -7,16 +7,17 @@ export const reqBannerList = () => mockAjax('/bannerList')
 export const reqRecommends = ()=> mockAjax('/recommends')
 export const reqFloors = ()=> mockAjax('/floors')
 export const reqBrands = ()=> mockAjax('/brands')
+export const reqSearchList = (searchParams)=>mockAjax({
+    url:'/searchList',
+    mothod:'post',
+    searchParams
+})
 // //广告轮播列表
 // export const reqBannerList_old =() => ajax('/cms/banner')
 
 
 // //mock接口函数
-// export const reqSearchList = (searchParams)=>mockAjax({
-//     url:'/searchList',
-//     mothod:'post',
-//     searchParams
-// })
+
 // //获取详情数据
 // export const reqaddToCart_ajax = (skuId,skuNum)=>ajax({
 //     url:`/addToCart/${skuId}/${skuNum}`,

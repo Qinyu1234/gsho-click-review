@@ -1,3 +1,10 @@
+//#region 脚手架
+    //创建脚手架4/3       的vue项目, 并运行
+        //npm install -g @vue/cli    安装脚手架4/3的版本
+        //vue create vue-demo        使用安装的脚手架创建一个新的vue项目
+        //npm run serve              运行创建的项目命令
+//#endregion
+
 //#region Vuex
     import Vuex from 'vuex'
     import Vue from 'vue'
@@ -28,7 +35,7 @@
     })
 //#endregion
 
-//#region  
+//#region  生命周期钩子
     // 生命周期钩子
         beforeMount		//vm挂载前	dom未挂载
         //用的最多,发ajax请求获取数据/开启定时器/添加一些时间
@@ -48,4 +55,8 @@
         // beforeUpdate	//页面渲染前 不是vm数据
         // updated			//页面渲染后 不是vm数据
         // destroyed		//销毁后
+//#endregion
+
+//#region 
+    :data-categoryName="category.categoryName"
 //#endregion

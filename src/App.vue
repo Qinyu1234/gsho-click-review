@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Toolbar/>
     <Header/>
     <router-view></router-view>
     <Footer/>
@@ -9,16 +10,18 @@
 <script>
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Toolbar from '@/components/Toolbar'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    Toolbar
   },
   mounted(){
       this.$store.dispatch('getCategoryList')
-  }
+  },
 }
 </script>
 

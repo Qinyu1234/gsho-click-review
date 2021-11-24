@@ -2,51 +2,93 @@
     "trademarkList": [
         {
             "tmId": 1,
-            "tmName": "苹果"
+            "tmName": "索尼（SONY）",
+            "tmImg": ""
         },
         {
             "tmId": 2,
-            "tmName": "小米"
+            "tmName": "TCL",
+            "tmImg": ""
         },
         {
             "tmId": 3,
-            "tmName": "华为"
+            "tmName": "长虹（CHANGHONG）",
+            "tmImg": ""
         },
         {
             "tmId": 4,
-            "tmName": "苹果1"
+            "tmName": "飞利浦（PHILIPS）",
+            "tmImg": ""
         },
         {
             "tmId": 5,
-            "tmName": "小米1"
+            "tmName": "风行电视",
+            "tmImg": ""
         },
         {
             "tmId": 6,
-            "tmName": "华为1"
+            "tmName": "",
+            "tmImg": "/images/search/phone06.png"
         },
         {
             "tmId": 7,
-            "tmName": "苹果2"
+            "tmName": "",
+            "tmImg": "/images/search/phone07.png"
         },
         {
             "tmId": 8,
-            "tmName": "小米2"
+            "tmName": "",
+            "tmImg": "/images/search/phone08.png"
         },
         {
             "tmId": 9,
-            "tmName": "华为2"
+            "tmName": "",
+            "tmImg": "/images/search/phone09.png"
         },
         {
             "tmId": 10,
-            "tmName": "苹果3"
+            "tmName": "",
+            "tmImg": "/images/search/phone10.png"
         },
         {
             "tmId": 11,
-            "tmName": "小米3"
+            "tmName": "",
+            "tmImg": "/images/search/phone11.png"
         },
         {
             "tmId": 12,
-            "tmName": "华为3"
+            "tmName": "",
+            "tmImg": "/images/search/phone12.png"
+        },
+        {
+            "tmId": 13,
+            "tmName": "",
+            "tmImg": "/images/search/phone12.png"
+        },
+        {
+            "tmId": 14,
+            "tmName": "",
+            "tmImg": "/images/search/phone14.png"
+        },
+        {
+            "tmId": 15,
+            "tmName": "",
+            "tmImg": "/images/search/phone01.png"
+        },
+        {
+            "tmId": 16,
+            "tmName": "",
+            "tmImg": "/images/search/phone06.png"
+        },
+        {
+            "tmId": 17,
+            "tmName": "",
+            "tmImg": "/images/search/phone07.png"
+        },
+        {
+            "tmId": 18,
+            "tmName": "",
+            "tmImg": "/images/search/phone02.png"
         }
     ],
     "attrsList": [

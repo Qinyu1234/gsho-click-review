@@ -27,9 +27,10 @@
         <!--头部第二行 搜索区域-->
         <div class="bottom">
             <h1 class="logoArea">
-                <a class="logo" title="尚品汇" href="###" target="_blank">
+                <!-- <a class="logo" title="尚品汇" href="###" target="_blank"></a> -->
+                <router-link class="logo" title="尚品汇" to="/" >
                     <img src="/images/home/logo.png" alt="">
-                </a>
+                </router-link>
             </h1>
             <div class="searchArea">
                 <form action="###" class="searchForm">
@@ -50,11 +51,15 @@
         },
         methods:{
             search(){
-               const location = {
+                const keyword = this.keyword
+                const location = {
                     name:'search',
-                    query:`/search/${this.keyword}`
+                    params:{
+                        keyword
+                    }
                 }
-                
+                location.query = this.$route.query
+
                 if (this.$route.name === "search") {
                     this.$router.replace(location);
                 } else {

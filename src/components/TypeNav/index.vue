@@ -2,7 +2,41 @@
     <!-- 商品分类导航 -->
     <div class="type-nav">
         <div class="container">
-            <h2 class="all">全部商品分类</h2>
+            <div @mouseleave="hideFirst" @mouseenter="showFirst">
+                <h2 class="all" >全部商品分类</h2>
+                <div class="sort" v-show="isShow" >
+                    <div class="all-sort-list2"  @mouseleave="currentIndex = -1">
+                        <div 
+                            class="item" 
+                            v-for="(category,index) in categoryList" 
+                            :key="index"
+                            :class="{active:currentIndex === index}"
+                            @mouseenter="showSubList(index)"
+                            @click='toSearch'
+                        >
+                            <h3>
+                                <a href="#" :data-categoryName="category.categoryName">
+                                    {{category.categoryName}}
+                                </a>
+                            </h3>
+                            <div class="item-list clearfix" v-show="currentIndex === index">
+                                <div class="subitem">
+                                    <dl class="fore" v-for="items in category.categoryChild" :key="items.categoryId">
+                                        <dt>
+                                            <a :data-categoryName="items.categoryName" href="#">{{items.categoryName}}</a>
+                                        </dt>
+                                        <dd>
+                                            <em v-for="item in items.categoryChild" :key="item.categoryId">
+                                                <a :data-categoryName="items.categoryName" href="#">{{item.categoryName}}</a>
+                                            </em>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <nav class="nav">
                 <a href="###">服装城</a>
                 <a href="###">美妆馆</a>
@@ -13,60 +47,60 @@
                 <a href="###">有趣</a>
                 <a href="###">秒杀</a>
             </nav>
-            <div class="sort">
-                <div class="all-sort-list2" @mouseleave="currentIndex = -1">
-                    <div 
-                        class="item" 
-                        v-for="(category,index) in categoryList" 
-                        :key="index"
-                        :class="{active:currentIndex === index}"
-                        @mouseenter="showSubList(index)"
-                    >
-                        <h3>
-                            <a href="" >
-                                {{category.categoryName}}
-                            </a>
-                        </h3>
-                        <div class="item-list clearfix" v-show="currentIndex === index">
-                            <div class="subitem">
-                                <dl class="fore" v-for="items in category.categoryChild" :key="items.categoryId">
-                                    <dt>
-                                        <a href="">{{items.categoryName}}</a>
-                                    </dt>
-                                    <dd>
-                                        <em v-for="item in items.categoryChild" :key="item.categoryId">
-                                            <a href="">{{item.categoryName}}</a>
-                                        </em>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </template>
 <script>
 import  throttle  from "lodash/throttle";
+import  {mapState}  from "vuex";
     export default {
         name:'TypeNav',
         data(){
             return{
-                isShow:false,
+                isShow:this.$route.path === '/',
                 currentIndex:-2,
             }
         },
-        props:{
-            categoryList:Array
+        computed:{
+            ...mapState({
+                categoryList: state => state.home.categoryList
+            })
         },
         methods:{
+            showFirst(){
+                this.isShow = true
+            },
+            hideFirst(){
+                if(this.$route.path !== '/'){
+                    this.isShow = false
+                }
+            },
             showSubList:throttle(
                 function (index){
                     this.currentIndex = index
                 },200,{
-                    trailing:false
-            })
+                    // leading :false,
+                    // trailing:false
+            }),
+            toSearch(event){
+                let categoryName = ''
+                const target = event.target
+                if(target.tagName.toUpperCase() === 'A'){
+                   categoryName = target.dataset.categoryname
+                }
+                const location = {
+                    name:'search',
+                    query:{
+                        categoryName
+                    }
+                }
+                location.params = this.$route.params
+                if(this.$router.path !== '/search'){
+                    this.$router.push(location)
+                }else{
+                    this.$router.reolace(location)
+                }
+            }
         }
     }
 </script>
