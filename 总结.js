@@ -71,4 +71,12 @@
             $emit("ss",'asd')
         $bus.$on('xx',callback) 绑定在mounted()
 
+    数据监控
+        // watch:{
+        //     $route:{
+        //         handler(){
+        //             监控处理
+        //         }
+        //     }
+        // }
 //#endregion
