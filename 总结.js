@@ -57,6 +57,18 @@
         // destroyed		//销毁后
 //#endregion
 
-//#region 
-    :data-categoryName="category.categoryName"
+//#region 其他
+    //自定义字段 :data-aa = "ss.aa"
+    :data-aa = "ss"
+        取数据
+        const {aa} = event.target.dataset
+
+    props //自定义事件 使用的是@
+        //父组件 
+            @ss = "aa"
+            aa(asd){}
+        //子组件
+            $emit("ss",'asd')
+        $bus.$on('xx',callback) 绑定在mounted()
+
 //#endregion

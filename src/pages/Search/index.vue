@@ -12,13 +12,23 @@
                         </li>
                     </ul>
                     <ul class="fl sui-tag">
-                        <li class="with-x">手机</li>
-                        <li class="with-x">iphone<i>×</i></li>
-                        <li class="with-x">华为<i>×</i></li>
-                        <li class="with-x">OPPO<i>×</i></li>
+                        <li class="with-x" v-if="options.keyword">
+                            {{options.keyword}}
+                            <i @click="delKeyword">×</i>
+                        </li>
+                        <li class="with-x" v-if="options.categoryName">
+                            {{options.categoryName}}
+                            <i @click="delCategoryName">×</i>
+                        </li>
+                        <template v-if="options.props !== []">
+                            <li class="with-x" v-for="(prop,index) in options.props" :key="index">
+                                {{prop}}
+                                <i @click="delProps(index)">×</i>
+                            </li>
+                        </template>
                     </ul>
                 </div>
-                <Select @addProp = "addProp"/>
+                <Select  @addProps="addProps"/>
                 <!--details-->
                 <div class="details clearfix">
                     <div class="sui-navbar">
@@ -421,25 +431,58 @@ import Select from './Select'
         },
         methods:{
             addProps(prop){
-               let {props} = this.options.props
+               let {props} = this.options
                if(props.includes(prop)) return 
                this.options.props.push(prop)
                this.getSearchList()
             },
-            getSearchList(){
+            updataParams(){
                 let {keyword} = this.$route.params
                 let {categoryName} = this.$route.query
                 
-                let searchParams = {
+                this.options = {
                     ...this.options,
                     categoryName,
                     keyword
                 }
-                this.$store.dispatch('getSearchList',searchParams) 
+            },
+            getSearchList(){
+                this.$store.dispatch('getSearchList',this.options) 
+            },
+            delKeyword(){
+                this.options.keyword = ''
+                this.$router.replace({
+                    name: 'search',
+                    query: this.$route.query
+                })
+
+                // 通知Header清除输入的关键字
+                this.$bus.$emit('clearKeyword')
+                },
+            delCategoryName(){
+                this.options.categoryName = '' 
+                this.$router.replace({
+                    name: 'search',
+                    params: this.$route.params
+                }) 
+            },
+            delProps(index){
+                this.options.props.splice(index,1)
+                this.getSearchList()
             }
         },
         mounted(){
             this.getSearchList()
+        },
+        watch:{
+            $route:{
+                handler(){
+                    this.updataParams()
+                    this.getSearchList()
+                },
+                immediate:true
+            }
+            
         }
     }
 </script>

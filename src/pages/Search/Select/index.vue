@@ -21,7 +21,7 @@
             <div class="fl value">
                 <ul class="type-list" >
                     <li v-for="(item,index) in attrs.attrValueList" :key="index"
-                        @click="$emit('addProp',`${item}`)"
+                        @click="$emit('addProps',`${attrs.attrId}:${item}:${attrs.attrName}`)"
                     >
                         <a>{{item}}</a>
                     </li>
@@ -35,6 +35,7 @@
 import { mapGetters } from 'vuex'
     export default {
         name:'',
+        // props:['addProp'],
         computed:{
             ...mapGetters(['trademarkList','attrsList'])
         }

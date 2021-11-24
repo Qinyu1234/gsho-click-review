@@ -49,6 +49,9 @@
                 keyword:''
             }
         },
+        mounted(){
+            this.$bus.$on('clearKeyword',()=>{this.keyword = ''})
+        },
         methods:{
             search(){
                 const keyword = this.keyword
