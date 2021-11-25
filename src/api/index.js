@@ -12,6 +12,7 @@ export const reqSearchList = (searchParams)=>mockAjax({
     mothod:'post',
     searchParams
 })
+export const reqDetailInfo = (skuId)=> mockAjax('/detail/:skuId')
 // //广告轮播列表
 // export const reqBannerList_old =() => ajax('/cms/banner')
 
@@ -25,7 +26,7 @@ export const reqSearchList = (searchParams)=>mockAjax({
 // })
 
 // //Mock.mock('/mock/detail/:skuId',{code:200,data:detail})
-// export const reqDetailInfo = (skuId)=> mockAjax('/detail/:skuId')
+// 
 
 
 // //添加更新购物车数据
