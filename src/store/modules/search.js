@@ -24,6 +24,9 @@ const getters = {
     attrsList(){
         return state.searchList.attrsList || []
     },
+    goodsList(){
+        return state.searchList.goodsList || []
+    }
 }
 
 export default ({

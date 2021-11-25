@@ -152,57 +152,90 @@
     "goodsList": [
         {
             "id": 1,
-            "defaultImg": "http://192.168.200.128:8080/xxx.jpg",
-            "title": "Apple iPhone 11 (A2223)",
-            "price": 3499,
-            "createTime": null,
-            "tmId": null,
-            "tmName": null,
-            "category1Id": null,
-            "category1Name": null,
-            "category2Id": null,
-            "category2Name": null,
-            "category3Id": null,
-            "category3Name": null,
-            "hotScore": 0,
-            "attrs": null
+            "defaultImg": "/images/search/mobile01.png",
+            "title": "Apple iPhone 1",
+            "price": 5499
         },
         {
             "id": 2,
-            "defaultImg": "http://192.168.200.128:8080/xxx.jpg",
-            "title": "Apple iPhone 11 (A2223)",
-            "price": 5499,
-            "createTime": null,
-            "tmId": null,
-            "tmName": null,
-            "category1Id": null,
-            "category1Name": null,
-            "category2Id": null,
-            "category2Name": null,
-            "category3Id": null,
-            "category3Name": null,
-            "hotScore": 0,
-            "attrs": null
+            "defaultImg": "/images/search/mobile02.png",
+            "title": "Apple iPhone 2",
+            "price": 5499
         },
         {
             "id": 3,
-            "defaultImg": "http://192.168.200.128:8080/xxx.jpg",
-            "title": "Apple iPhone 11 (A2223)",
-            "price": 7499,
-            "createTime": null,
-            "tmId": null,
-            "tmName": null,
-            "category1Id": null,
-            "category1Name": null,
-            "category2Id": null,
-            "category2Name": null,
-            "category3Id": null,
-            "category3Name": null,
-            "hotScore": 0,
-            "attrs": null
+            "defaultImg": "/images/search/mobile03.png",
+            "title": "Apple iPhone 3",
+            "price": 5499
+        },
+        {
+            "id": 4,
+            "defaultImg": "/images/search/mobile04.png",
+            "title": "Apple iPhone 4",
+            "price": 5499
+        },
+        {
+            "id": 5,
+            "defaultImg": "/images/search/mobile01.png",
+            "title": "Apple iPhone 5",
+            "price": 5499
+        },
+        {
+            "id": 6,
+            "defaultImg": "/images/search/mobile02.png",
+            "title": "Apple iPhone 6",
+            "price": 5499
+        },
+        {
+            "id": 7,
+            "defaultImg": "/images/search/mobile03.png",
+            "title": "Apple iPhone 7",
+            "price": 5499
+        },
+        {
+            "id": 8,
+            "defaultImg": "/images/search/mobile04.png",
+            "title": "Apple iPhone 8",
+            "price": 5499
+        },
+        {
+            "id": 9,
+            "defaultImg": "/images/search/mobile01.png",
+            "title": "Apple iPhone 9",
+            "price": 5499
+        },
+        {
+            "id": 10,
+            "defaultImg": "/images/search/mobile02.png",
+            "title": "Apple iPhone 10",
+            "price": 5499
+        },
+        {
+            "id": 11,
+            "defaultImg": "/images/search/mobile03.png",
+            "title": "Apple iPhone 11",
+            "price": 5499
+        },
+        {
+            "id": 12,
+            "defaultImg": "/images/search/mobile04.png",
+            "title": "Apple iPhone 12",
+            "price": 5499
+        },
+        {
+            "id": 13,
+            "defaultImg": "/images/search/mobile02.png",
+            "title": "Apple iPhone 13",
+            "price": 5499
+        },
+        {
+            "id": 14,
+            "defaultImg": "/images/search/mobile01.png",
+            "title": "Apple iPhone 14",
+            "price": 5499
         }
     ],
-    "total": 38,
+    "total": 1234,
     "pageSize": 2,
     "pageNo": 1,
     "totalPages": 4

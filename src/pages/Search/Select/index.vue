@@ -5,7 +5,11 @@
             <div class="fl key brand">品牌</div>
             <div class="value logos">
                 <ul class="logo-list">
-                    <li v-for="trademark in trademarkList" :key="trademark.tmId">
+                    <li 
+                        v-for="trademark in trademarkList" 
+                        :key="trademark.tmId"
+                        @click="$emit('addTrademark',`${trademark.tmName}${trademark.tmImg}`)"
+                    >
                         {{trademark.tmName}}
                         <img :src="trademark.tmImg" />
                     </li>
