@@ -29,7 +29,7 @@
     props:['skuImageList'],
     data(){
       return{
-        showIndex:1,
+        showIndex:0,
         swiperOption: {
           slidesPerView: 7,
           slidesPerGroup:7,

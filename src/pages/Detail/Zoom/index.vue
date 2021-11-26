@@ -1,11 +1,11 @@
 <template>
   <div class="spec-preview">
-    <img v-if="skuImageList[defaultIndex]" :src="skuImageList[defaultIndex].imgUrl" />
-    <div class="event"></div>
+    <img v-if="skuImageList[defaultIndex]"  :src="skuImageList[defaultIndex].imgUrl" />
+    <div  class="event" @mousemove="showBigimg"></div>
     <div class="big">
-      <img v-if="skuImageList[defaultIndex]" :src="skuImageList[defaultIndex].imgUrl" />
+      <img ref="bigImg" v-if="skuImageList[defaultIndex]" :src="skuImageList[defaultIndex].imgUrl" />
     </div>
-    <div class="mask"></div>
+    <div ref="mask" class="mask"></div>
   </div>
 </template>
 
@@ -22,7 +22,38 @@
         this.$bus.$on('defaultIndex',(index) =>{
          this.defaultIndex = index
         }) 
+    },
+    methods:{
+      showBigimg(event){
+        let mouseX = event.offsetX
+        let mouseY = event.offsetY
+
+        let maskDiv = this.$refs.mask
+        let maskX = mouseX- maskDiv.offsetWidth/2
+        let maskY = mouseY- maskDiv.offsetHeight/2
+
+        let bigImgDiv = this.$refs.bigImg
+
+        if(maskX < 0){
+          maskX = 0
+        }else if(maskX > maskDiv.offsetWidth){
+          maskX = maskDiv.offsetWidth
+        }
+
+        if(maskY < 0){
+          maskY = 0
+        }else if(maskY > maskDiv.offsetHeight){
+          maskY = maskDiv.offsetHeight
+        }
+
+        maskDiv.style.left = maskX +'px'
+        maskDiv.style.top = maskY +'px'
+
+        bigImgDiv.style.left = -2*maskX +'px'
+        bigImgDiv.style.top = -2*maskY +'px'
+      }
     }
+
   }
 </script>
 

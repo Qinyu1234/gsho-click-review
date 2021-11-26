@@ -2,6 +2,7 @@ import Home from "@/pages/Home";
 import Register from "@/pages/Register";
 import Search from "@/pages/Search";
 import Detail from "@/pages/Detail";
+import ShopCart from "@/pages/ShopCart";
 
 export default [
     {
@@ -23,5 +24,10 @@ export default [
         name:'detail',
         path:'/detail/:skuId',
         component:Detail
+    },
+    {
+        name:'shopcart',
+        path:'/shopcart',
+        component:ShopCart
     }
 ]

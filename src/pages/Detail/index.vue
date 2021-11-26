@@ -76,12 +76,13 @@
             </div>
             <div class="cartWrap">
               <div class="controls">
-                <input autocomplete="off" class="itxt">
-                <a href="javascript:" class="plus">+</a>
-                <a href="javascript:" class="mins">-</a>
+                <input autocomplete="off" @change ="shopNum = shopNum >=0?parseInt(shopNum):0" v-model="shopNum" class="itxt">
+                <a href="javascript:" class="plus" @click="shopNum++">+</a>
+                <a href="javascript:" class="mins" @click="shopNum>=1?shopNum--:0">-</a>
               </div>
               <div class="add">
-                <a href="javascript:">加入购物车</a>
+                <!-- <a href="javascript:" >加入购物车</a> -->
+                <router-link to="/shopcart">加入购物车</router-link>
               </div>
             </div>
           </div>
@@ -338,6 +339,11 @@ import { mapGetters } from 'vuex'
 
   export default {
     name: 'Detail',
+    data(){
+      return{
+        shopNum:0
+      }
+    },
     components: {
       ImageList,
       Zoom
@@ -360,7 +366,6 @@ import { mapGetters } from 'vuex'
           this.spuSaleAttrList[indexs].spuSaleAttrValueList[index].isChecked = '1'
           this.$route.dispatch('changeChecked',this.spuSaleAttrList)
       },
-      
     }
   }
 </script>
