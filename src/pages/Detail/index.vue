@@ -16,9 +16,9 @@
         <!-- 左侧放大镜区域 -->
         <div class="previewWrap">
           <!--放大镜效果-->
-          <Zoom />
+          <Zoom :skuImageList="skuImageList" />
           <!-- 小图列表 -->
-          <ImageList />
+          <ImageList :skuImageList="skuImageList"/>
         </div>
         <!-- 右侧选择区域布局 -->
         <div class="InfoWrap">
@@ -65,7 +65,13 @@
               <div class="choosed"></div>
               <dl v-for="(spuSaleAttr,indexs) in spuSaleAttrList" :key="indexs">
                 <dt class="title">{{spuSaleAttr.saleAttrName}}</dt>
-                <dd changepirce="0" @click="isClick(indexs,index)" v-for="(spuSaleAttr,index) in spuSaleAttr.spuSaleAttrValueList" :key="index" class="active">{{spuSaleAttr.saleAttrValueName}}</dd>
+                <dd changepirce="0" 
+                  @click="changeChecked(indexs,index)" 
+                  v-for="(spuSale,index) in spuSaleAttr.spuSaleAttrValueList" :key="index" 
+                  :class="{active:spuSale.isChecked === '1'}"
+                >
+                  {{spuSale.saleAttrValueName}}
+                </dd>
               </dl>
             </div>
             <div class="cartWrap">
@@ -341,12 +347,20 @@ import { mapGetters } from 'vuex'
       this.$store.dispatch('getDetailInfo',skuId)
     },
     computed:{
-      ...mapGetters(['categoryView','skuInfo','spuSaleAttrList'])
+      ...mapGetters(['categoryView','skuInfo','spuSaleAttrList']),
+      skuImageList(){
+        return this.skuInfo.skuImageList || []
+      }
     },
     methods:{
-      isClick(indexs,index){
-          this.$route.commit('',{indexs,index})
-      }
+      changeChecked(indexs,index){
+          this.spuSaleAttrList[indexs].spuSaleAttrValueList.forEach((item)=>{
+            item.isChecked = '0'
+          })
+          this.spuSaleAttrList[indexs].spuSaleAttrValueList[index].isChecked = '1'
+          this.$route.dispatch('changeChecked',this.spuSaleAttrList)
+      },
+      
     }
   }
 </script>

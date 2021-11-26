@@ -41,6 +41,7 @@
         //用的最多,发ajax请求获取数据/开启定时器/添加一些时间
         mounted			//vm挂载后	dom已经挂载	
             // mounted(){ this.$store.dispatch('xx') }
+            //$this.$bus.$on()
         beforeDestroy	//销毁前
 
     //计算

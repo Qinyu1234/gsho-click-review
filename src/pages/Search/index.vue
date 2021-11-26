@@ -70,8 +70,6 @@
                             <li class="yui3-u-1-5" v-for="goods in goodsList" :key="goods.id">
                                 <div class="list-wrap">
                                     <div class="p-img">
-                                        <!-- <a href="#"  target="_blank">
-                                        </a> -->
                                         <router-link :to="`/detail/${goods.id}`">
                                             <img :src="goods.defaultImg" />
                                         </router-link>
@@ -83,7 +81,6 @@
                                         </strong>
                                     </div>
                                     <div class="attr">
-                                        <!-- <a target="_blank" href="#"  >{{goods.title}}</a> -->
                                         <router-link :to="`/detail/${goods.id}`" title="促销信息，下单即赠送三个月CIBN视频会员卡！【小米电视新品4A 58 火爆预约中】">
                                             {{goods.title}}
                                         </router-link>

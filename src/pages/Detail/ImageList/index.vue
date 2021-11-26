@@ -1,5 +1,18 @@
 <template>
-  <div class="swiper-container">
+  <swiper class="swiper" :options="swiperOption">
+    <swiper-slide 
+      v-for="(skuImage,index) in skuImageList" :key="index"
+    >
+      <img 
+      @click="defaultIndex(index)"
+      :class="{active:showIndex === index}"
+      :src="skuImage.imgUrl">
+    </swiper-slide>
+    <div class="swiper-button-prev" slot="button-prev"></div>
+    <div class="swiper-button-next" slot="button-next"></div>
+  </swiper>
+  
+  <!-- <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <img src="/images/detail/s1.png">
@@ -7,14 +20,33 @@
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-  </div>
+  </div> -->
 </template>
 
 <script>
-
-  import Swiper from 'swiper'
   export default {
     name: "ImageList",
+    props:['skuImageList'],
+    data(){
+      return{
+        showIndex:1,
+        swiperOption: {
+          slidesPerView: 7,
+          slidesPerGroup:7,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
+      }
+    },
+    methods:{
+      defaultIndex(index){
+        this.showIndex = index
+        this.$bus.$emit('defaultIndex',this.showIndex)
+      }
+      
+    }
   }
 </script>
 
@@ -28,7 +60,8 @@
     .swiper-slide {
       // width: 56px;
       // height: 56px;
-
+     
+      
       img {
         width: 100%;
         height: 100%;
@@ -39,11 +72,6 @@
         display: block;
 
         &.active {
-          border: 2px solid #f60;
-          padding: 1px;
-        }
-
-        &:hover {
           border: 2px solid #f60;
           padding: 1px;
         }

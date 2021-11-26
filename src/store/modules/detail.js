@@ -6,10 +6,8 @@ const mutations = {
     RECIVE_GETDETAILINFO(state,detailInfo){
         state.detailInfo = detailInfo
     },
-    isChecked(state,{indexs,index}){
-        state.detailInfo.spuSaleAttrList[indexs].spuSaleAttrValueList.forEach(){
-            
-        }
+    CHANGECHECKED(state,spuSaleAttrList){
+        state.detailInfo.spuSaleAttrList = spuSaleAttrList
     }
 }
 const actions = {
@@ -18,20 +16,20 @@ const actions = {
         if(result.code === 200){
             commit('RECIVE_GETDETAILINFO',result.data)
         }
+    },
+    changeChecked({commit},spuSaleAttrList){
+        commit('CHANGECHECKED',spuSaleAttrList)
     }
 }
 const getters = {
     categoryView(){
-        return state.detailInfo.categoryView
+        return state.detailInfo.categoryView || {}
     },
     spuSaleAttrList(){
-        return state.detailInfo.spuSaleAttrList
+        return state.detailInfo.spuSaleAttrList || []
     },
     skuInfo(){
-        return state.detailInfo.skuInfo
-    },
-    skuImageList(){
-        return state.detailInfo.skuInfo.skuImageList || []
+        return state.detailInfo.skuInfo || {}
     }
 }
 

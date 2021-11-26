@@ -1,9 +1,9 @@
 <template>
   <div class="spec-preview">
-    <img src="/images/detail/s1.png" />
+    <img v-if="skuImageList[defaultIndex]" :src="skuImageList[defaultIndex].imgUrl" />
     <div class="event"></div>
     <div class="big">
-      <img src="/images/detail/s1.png" />
+      <img v-if="skuImageList[defaultIndex]" :src="skuImageList[defaultIndex].imgUrl" />
     </div>
     <div class="mask"></div>
   </div>
@@ -12,6 +12,17 @@
 <script>
   export default {
     name: "Zoom",
+    data(){
+      return{
+        defaultIndex:0,
+      }
+    },
+    props:['skuImageList'],
+    mounted(){
+        this.$bus.$on('defaultIndex',(index) =>{
+         this.defaultIndex = index
+        }) 
+    }
   }
 </script>
 
