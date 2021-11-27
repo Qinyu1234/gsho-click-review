@@ -7,12 +7,20 @@ export const reqBannerList = () => mockAjax('/bannerList')
 export const reqRecommends = ()=> mockAjax('/recommends')
 export const reqFloors = ()=> mockAjax('/floors')
 export const reqBrands = ()=> mockAjax('/brands')
+export const reqDetailInfo = (skuId)=> mockAjax('/detail/:skuId')
+
 export const reqSearchList = (searchParams)=>mockAjax({
     url:'/searchList',
     mothod:'post',
     searchParams
 })
-export const reqDetailInfo = (skuId)=> mockAjax('/detail/:skuId')
+
+export const reqAddOrUpdataCart = (skuId,skuNum)=>mockAjax({
+    url:`/addOrUpdataCart/:skuId/:skuNum`,
+    method:'post'
+})
+
+export const reqCartList = ()=> mockAjax('/cart/cartList')
 // //广告轮播列表
 // export const reqBannerList_old =() => ajax('/cms/banner')
 
@@ -30,13 +38,10 @@ export const reqDetailInfo = (skuId)=> mockAjax('/detail/:skuId')
 
 
 // //添加更新购物车数据
-// export const reqAddOrUpdataCart = (skuId,skuNum)=>mockAjax({
-//     url:`/addOrUpdataCart/:skuId/:skuNum`,
-//     method:'post'
-// })
+
 
 // //获取购物车列表/api/cart/cartList
-// export const reqCartList = ()=> mockAjax('/cart/cartList')
+
 
 // //注册:/api/user/passport/register post
 // export const reqRegister = (userInfo)=> mockAjax({

@@ -3,6 +3,7 @@ import Register from "@/pages/Register";
 import Search from "@/pages/Search";
 import Detail from "@/pages/Detail";
 import ShopCart from "@/pages/ShopCart";
+import AddCartSuccess from "@/pages/AddCartSuccess";
 
 export default [
     {
@@ -29,5 +30,10 @@ export default [
         name:'shopcart',
         path:'/shopcart',
         component:ShopCart
+    },
+    {
+        name:'addcartsuccess',
+        path:'/addcartsuccess',
+        component:AddCartSuccess
     }
 ]

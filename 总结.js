@@ -80,4 +80,7 @@
         //         }
         //     }
         // }
+        
+    获取节点值
+        $event.target.value
 //#endregion

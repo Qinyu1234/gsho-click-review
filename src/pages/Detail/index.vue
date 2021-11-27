@@ -81,8 +81,9 @@
                 <a href="javascript:" class="mins" @click="shopNum>=1?shopNum--:0">-</a>
               </div>
               <div class="add">
-                <!-- <a href="javascript:" >加入购物车</a> -->
-                <router-link to="/shopcart">加入购物车</router-link>
+                <a href="javascript:" @click='goShopCart'>加入购物车</a>
+                <!-- <button  @click='goShopCart' >加入购物车</button> -->
+                <!-- <router-link @click='goShopCart'>加入购物车</router-link> -->
               </div>
             </div>
           </div>
@@ -366,6 +367,26 @@ import { mapGetters } from 'vuex'
           this.spuSaleAttrList[indexs].spuSaleAttrValueList[index].isChecked = '1'
           this.$route.dispatch('changeChecked',this.spuSaleAttrList)
       },
+      async goShopCart(){
+        let {shopNum} = this
+        let {skuId} = this.$route.params
+        try {
+          const result = await this.$store.dispatch('addOrUpdataCart',{skuId,shopNum})
+          if(result === 'ok'){
+            this.$router.push({
+              name:'addcartsuccess',
+              query:{
+                skuId,
+                shopNum
+              }
+            })
+          }
+        } catch (error) {
+          alert('添加购物车失败',error.message)
+        }
+        
+        
+      }
     }
   }
 </script>
