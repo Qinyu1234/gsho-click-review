@@ -45,20 +45,21 @@
         </div>
         <div class="cart-tool">
             <div class="select-all">
-            <input v-model="allChecked" @click="allChecked" class="chooseAll" type="checkbox">
-            <span>全选</span>
+            <input v-model="isAllCheck" class="chooseAll" type="checkbox">
+            <span >全选</span>
             </div>
             <div class="option">
             <a href="#none">删除选中的商品</a>
+             <!-- @click="delCart" -->
             <a href="#none">移到我的关注</a>
             <a href="#none">清除下柜商品</a>
             </div>
             <div class="money-box">
             <div class="chosed">已选择
-                <span>0</span>件商品</div>
+                <span>{{isCheckedNum}}</span>件商品</div>
             <div class="sumprice">
                 <em>总价（不含运费） ：</em>
-                <i class="summoney">0</i>
+                <i class="summoney">{{allMoney}}</i>
             </div>
             <div class="sumbtn">
                 <a class="sum-btn" href="###" target="_blank">结算</a>
@@ -83,10 +84,38 @@ import { mapState } from 'vuex'
             ...mapState({
                 cartList:state=>state.shopcart.cartList || []
             }),
+            isAllCheck:{
+              get(){
+                return this.cartList.every(item => {
+                  return item.isChecked
+                })
+              },
+              set(value){
+                this.cartList.forEach(item => {
+                  item.isChecked = value === true ?1:0
+                });
+              }
+            },
+            isCheckedNum(){
+              return this.cartList.reduce((prev,item)=>{
+                  if(item.isChecked){
+                    prev++
+                  }
+                  return prev
+              },0)
+            },
+            allMoney(){
+              return this.cartList.reduce((prev,item) =>{
+                   if(item.isChecked){
+                     prev += item.skuNum * item.cartPrice
+                   }
+                   return prev
+              },0)
+            }
         },
         methods:{
             getCartList(){
-                this.$store.dispatch('getCartList')
+              this.$store.dispatch('getCartList')
             },
             updataCart(index,flag = 0,sflag = 0,value = ''){
                 let {cartList} = this
@@ -103,10 +132,11 @@ import { mapState } from 'vuex'
                     }
                 }
             },
-            allChecked(){
-                let {cartList} = this
-
-            }
+            // delCart(){
+            //   let carts = this.cartList.filter(item =>item.isChecked === 0)
+            //   this.cartList = carts
+            //   console.log('delCart',this.cartList,ss)
+            // }
         }
     }
 </script>
