@@ -47,6 +47,7 @@
     //计算
         computed
             //...mapState
+            //...mapGetters
         watch
 
     // 其他生命周期钩子

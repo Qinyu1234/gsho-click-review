@@ -21,6 +21,7 @@ export const reqAddOrUpdataCart = (skuId,skuNum)=>mockAjax({
 })
 
 export const reqCartList = ()=> mockAjax('/cart/cartList')
+export const reqTrade = ()=>mockAjax(`/order/auth/trade`)
 // //广告轮播列表
 // export const reqBannerList_old =() => ajax('/cms/banner')
 
@@ -65,7 +66,7 @@ export const reqCartList = ()=> mockAjax('/cart/cartList')
 
 // //获取订单交易页信息 /api/order/auth/trade
 
-// export const reqTrade = ()=>mockAjax(`/order/auth/trade`)
+// 
 
 // //获取我的订单列表 /api/order/auth/{page}/{limit}
 
