@@ -31,8 +31,8 @@
         </div>
         <div class="step-cont">
           <ul class="payType">
-            <li><img src="/images/payAbout/pay2.jpg"></li>
-            <li><img src="/images/payAbout/pay3.jpg"></li>
+            <li :class="{selected:flag === 0}"  @click="flag = 0"><img src="/images/payAbout/pay2.jpg"></li>
+            <li :class="{selected:flag === 1}" @click="flag = 1"><img src="/images/payAbout/pay3.jpg"></li>
           </ul>
 
         </div>
@@ -65,7 +65,11 @@
         <div class="hr"></div>
 
         <div class="submit">
-          <router-link class="btn" to="/paysuccess">立即支付</router-link>
+          <!-- <router-link class="btn" to="/paysuccess">立即支付</router-link> -->
+          <button class="btn" @click="pay">立即支付</button>
+          <!-- <template>
+            <el-button class="btn" @click="pay">立即支付</el-button>
+          </template> -->
         </div>
         <div class="otherpay">
           <div class="step-tit">
@@ -84,6 +88,18 @@
 <script>
   export default {
     name: 'Pay',
+    data(){
+      return{
+        flag:0
+      }
+    },
+    methods:{
+      pay() {
+        this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', '请用微信扫码支付', {
+          dangerouslyUseHTMLString: false
+        });
+      }
+    }
   }
 </script>
 
@@ -114,7 +130,7 @@
 
       .checkout-tit {
         padding: 10px;
-
+      
         .tit-txt {
           font-size: 14px;
           line-height: 21px;
@@ -212,6 +228,13 @@
               line-height: 18px;
             }
           }
+          .selected {
+            border-color: #e1251b;
+          }
+
+          .selected::after {
+            display: block;
+          }
         }
       }
 
@@ -237,4 +260,5 @@
       }
     }
   }
+  
 </style>
