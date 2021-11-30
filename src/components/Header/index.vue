@@ -17,7 +17,8 @@
                 <div class="typeList">
                     <!-- <a href="###">我的订单</a> -->
                     <router-link to="/center">我的订单</router-link>
-                    <a href="###">我的购物车</a>
+                    <!-- <a href="###"></a> -->
+                    <router-link to="/shopcart">我的购物车</router-link>
                     <a href="###">我的尚品汇</a>
                     <a href="###">尚品汇会员</a>
                     <a href="###">企业采购</a>
@@ -28,14 +29,14 @@
             </div>
         </div>
         <!--头部第二行 搜索区域-->
-        <div class="bottom" v-if="!$route.meta">
+        <div class="bottom" >
             <h1 class="logoArea">
                 <!-- <a class="logo" title="尚品汇" href="###" target="_blank"></a> -->
                 <router-link class="logo" title="尚品汇" to="/" >
                     <img src="/images/home/logo.png" alt="">
                 </router-link>
             </h1>
-            <div class="searchArea" >
+            <div class="searchArea" v-if="$route.meta !== true">
                 <form action="###" class="searchForm">
                     <input type="text" id="autocomplete" v-model.trim="keyword" class="input-error input-xxlarge" />
                     <button class="sui-btn btn-xlarge btn-danger" @click.prevent="search" type="button">搜索</button>

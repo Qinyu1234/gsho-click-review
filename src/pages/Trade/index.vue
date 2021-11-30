@@ -128,9 +128,9 @@ import { mapGetters } from 'vuex'
       },
       selectAddress(){
         return {
-          userAddress:this.userAddressList[this.addressIndex].userAddress || '',
-          consignee:this.userAddressList[this.addressIndex].consignee || '',
-          phoneNum:this.userAddressList[this.addressIndex].phoneNum || ''
+          userAddress:this.userAddressList[this.addressIndex] ? this.userAddressList[this.addressIndex].userAddress : '',
+          consignee:this.userAddressList[this.addressIndex] ? this.userAddressList[this.addressIndex].consignee : '',
+          phoneNum:this.userAddressList[this.addressIndex] ? this.userAddressList[this.addressIndex].phoneNum : '',
         }
       }
     }

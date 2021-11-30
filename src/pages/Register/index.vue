@@ -8,20 +8,32 @@
       </h3>
       <div class="content">
         <label>手机号:</label>
-        <input type="text" placeholder="请输入你的手机号">
-        <span class="error-msg">错误提示信息</span>
+        <input type="text"  @change='$validator.validateAll()' placeholder="请输入你的手机号" v-model="phoneNum"
+          name="phoneNum" v-validate="{required: true,regex: /^1\d{10}$/}" 
+          :class="{invalid: errors.has('phoneNum')}">
+        <span class="error-msg">{{ errors.first('phoneNum') }}</span>
+        <button :disabled="!isRightPhone">
+           获取已发送验证码1234
+        </button>
       </div>
+
       <div class="content">
         <label>验证码:</label>
-        <input type="text" placeholder="请输入验证码">
-        <img ref="code" src="http://182.92.128.115/api/user/passport/code" alt="code">
-        <span class="error-msg">错误提示信息</span>
+        <input v-model="checkedCode" name="checkedCode" placeholder="请输入验证码" 
+          v-validate="{required: true,regex: /\d{4}$/}" 
+          :class="{invalid: errors.has('checkedCode')}">
+          <img ref="code" src="" alt="这是一个验证码图片">
+          <span class="error-msg">{{ errors.first('checkedCode') }}</span>
       </div>
+
       <div class="content">
         <label>登录密码:</label>
-        <input type="text" placeholder="请输入你的登录密码">
-        <span class="error-msg">错误提示信息</span>
+        <input v-model="password" name="password" placeholder="请输入你的登录密码" 
+          v-validate="{required: true, min: 6, max: 10}" 
+          :class="{invalid: errors.has('password')}">
+          <span class="error-msg">{{ errors.first('password') }}</span>
       </div>
+      
       <div class="content">
         <label>确认密码:</label>
         <input type="text" placeholder="请输入确认密码">
@@ -58,7 +70,24 @@
 
 <script>
   export default {
-    name: 'Register'
+    name: 'Register',
+    data(){
+      return{
+        phoneNum:'',
+        checkedCode: '',
+        password: '',
+        password2: '',
+        isAgree: true,
+        computeTime: 0,
+      }
+    },
+    methods:{},
+    computed:{
+      isRightPhone(){
+        return /^1\d{10}$/.test(this.phone)
+      }
+    }
+    
   }
 </script>
 

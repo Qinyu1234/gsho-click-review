@@ -43,7 +43,20 @@ VueRouter.prototype.replace = function replace(location, onResolve, onReject) {
 //   })
 // }
 
-export default new VueRouter({
+const router = new VueRouter({
     mode:'history',
     routes
 })
+
+router.beforeEach((to, from, next) => {
+  // ...
+  if(to.name === 'shopcart'){
+    //console.log('shopcart')
+    next()
+  }else{
+    next()
+    //console.log(to.name,from.name)
+  }
+})
+
+export default router

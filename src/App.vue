@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Toolbar/>
+    <Toolbar v-if="$route.meta !== true"/>
     <Header/>
     <router-view></router-view>
-    <Footer v-if="!$route.meta" />
+    <Footer v-if="$route.meta !== true" />
   </div>
 </template>
 

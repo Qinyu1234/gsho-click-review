@@ -6,6 +6,7 @@ import TypeNav from '@/components/TypeNav'
 import "./mock/mockServer"
 import "./plugins/swiper"
 import "./plugins/element"
+import "./plugins/validate"
 
 Vue.component(TypeNav.name,TypeNav)
 Vue.config.productionTip = false

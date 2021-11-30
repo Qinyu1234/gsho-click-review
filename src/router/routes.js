@@ -29,7 +29,8 @@ export default [
     {
         name:'register',
         path:'/register',
-        component:Register
+        component:Register,
+        meta:true
     },
     {
         name:'search',
