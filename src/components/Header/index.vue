@@ -8,12 +8,15 @@
                     <p>尚品汇欢迎您！</p>
                     <p>
                         <span>请</span>
-                        <a href="###">登录</a>
-                        <a href="###" class="register">免费注册</a>
+                        <!-- <a href="###">登录</a> -->
+                        <router-link to="/login">登录</router-link>
+                        <!-- <a href="###" class="register">免费注册</a> -->
+                        <router-link to="/register" class="register">免费注册</router-link>
                     </p>
                 </div>
                 <div class="typeList">
-                    <a href="###">我的订单</a>
+                    <!-- <a href="###">我的订单</a> -->
+                    <router-link to="/center">我的订单</router-link>
                     <a href="###">我的购物车</a>
                     <a href="###">我的尚品汇</a>
                     <a href="###">尚品汇会员</a>
@@ -25,14 +28,14 @@
             </div>
         </div>
         <!--头部第二行 搜索区域-->
-        <div class="bottom">
+        <div class="bottom" v-if="!$route.meta">
             <h1 class="logoArea">
                 <!-- <a class="logo" title="尚品汇" href="###" target="_blank"></a> -->
                 <router-link class="logo" title="尚品汇" to="/" >
                     <img src="/images/home/logo.png" alt="">
                 </router-link>
             </h1>
-            <div class="searchArea">
+            <div class="searchArea" >
                 <form action="###" class="searchForm">
                     <input type="text" id="autocomplete" v-model.trim="keyword" class="input-error input-xxlarge" />
                     <button class="sui-btn btn-xlarge btn-danger" @click.prevent="search" type="button">搜索</button>

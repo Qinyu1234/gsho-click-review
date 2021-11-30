@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import  QRCode  from "qrcode";
   export default {
     name: 'Pay',
     data(){
@@ -94,10 +95,58 @@
       }
     },
     methods:{
-      pay() {
-        this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', '请用微信扫码支付', {
-          dangerouslyUseHTMLString: false
-        });
+      async pay() {
+        try {
+          let imgRQ = await QRCode.toDataURL(`123`)
+          
+          this.$confirm(`<img src='${imgRQ}'/>`, '请用微信扫码支付', {
+            dangerouslyUseHTMLString: true,
+            cancelButtonText:'支付遇到问题',
+            confirmButtonText:'支付已经完成',
+            center:true,
+            showClose:false,
+            beforeClose:function(action, instance, done){
+              if(action ==='confirm'){
+                //点击确认按钮的逻辑
+                //判断交易状态是否成功
+                //提示需要支付
+                done()
+              }else if(action === 'cancel'){
+                //点击取消按钮的逻辑
+                done()
+              }
+            }
+          })
+          .then(() => {
+            clearInterval(this.time)
+            this.time = null
+            // 跳转到成功页面
+            this.$router.push('/paysuccess')
+          })
+          .catch(() => {
+            this.$message.warning('请联系客服小姐姐')
+            clearInterval(this.time)
+            this.time = null
+          })
+
+          if(!this.time){
+            this.time = setInterval(()=>{
+              //轮训交易结果
+              if(true){
+                //跳转支付成功页面
+                //关闭messagebox
+                this.$msgbox.close()
+                //清空定时器时间
+                this.time = null
+                this.$router.push('/paysuccess')
+                //修改交易状态
+              }
+            },10000)
+          }
+        } catch (error) {
+          
+        }
+        
       }
     }
   }
