@@ -6,13 +6,19 @@
             <div class="container">
                 <div class="loginList">
                     <p>尚品汇欢迎您！</p>
-                    <p>
-                        <span>请</span>
-                        <!-- <a href="###">登录</a> -->
-                        <router-link to="/login">登录</router-link>
-                        <!-- <a href="###" class="register">免费注册</a> -->
-                        <router-link to="/register" class="register">免费注册</router-link>
-                    </p>
+                        <div v-if="!succ.name" style="display:inline-block">
+                            <p>
+                                <span>请</span>
+                                <router-link to="/login">登录</router-link>
+                                <router-link to="/register" class="register">免费注册</router-link>
+                            </p>
+                        </div>
+                        <div v-else style="display:inline-block">
+                            <p>
+                                <span>{{succ.name}}</span>
+                                <a href="#" style="margin-left:3px" @click="outLogin">| 退出</a>
+                            </p>
+                        </div>
                 </div>
                 <div class="typeList">
                     <!-- <a href="###">我的订单</a> -->
@@ -46,6 +52,7 @@
     </header>
 </template>
 <script>
+import { mapGetters } from 'vuex'
     export default {
         name:'Header',
         data(){
@@ -55,6 +62,9 @@
         },
         mounted(){
             this.$bus.$on('clearKeyword',()=>{this.keyword = ''})
+        },
+        computed:{
+            ...mapGetters(['succ'])
         },
         methods:{
             search(){
@@ -72,6 +82,9 @@
                 } else {
                     this.$router.push(location);
                 }
+            },
+            outLogin(){
+                this.$store.dispatch('outLogin')
             }
         }
     }

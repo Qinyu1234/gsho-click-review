@@ -9,11 +9,11 @@ export function getUserTempId(){//临时id
 }
 
 export function getToken(){
-    
+    return localStorage.getItem('TOKEN_KEY')
 }
-export function setToken(){
-    
+export function setToken(token){
+    localStorage.setItem('TOKEN_KEY',token)
 }
 export function removeToken(){
-
+    localStorage.removeItem('TOKEN_KEY')
 }

@@ -22,6 +22,12 @@ export const reqAddOrUpdataCart = (skuId,skuNum)=>mockAjax({
 
 export const reqCartList = ()=> mockAjax('/cart/cartList')
 export const reqTrade = ()=>mockAjax(`/order/auth/trade`)
+
+export const reqLogin = (userInfo) => mockAjax({
+    url:'/login',
+    method:'post',
+    data:userInfo
+})
 // //广告轮播列表
 // export const reqBannerList_old =() => ajax('/cms/banner')
 

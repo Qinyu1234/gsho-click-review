@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from "@/store";
 
 const service = axios.create({
     baseURL:'/mock',
@@ -6,6 +7,8 @@ const service = axios.create({
 })
 
 service.interceptors.request.use((config)=>{
+    let token = store.state.userInfo ? store.state.userInfo.token:''
+    config.headers.token = token
     return config
 })
 

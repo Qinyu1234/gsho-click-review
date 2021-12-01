@@ -7,6 +7,7 @@ import search from './modules/search.js'
 import detail from './modules/detail.js'
 import shopcart from './modules/shopcart.js'
 import payabout from './modules/payAbout.js'
+import userInfo from './modules/userInfo.js'
 const state = {}
 const mutations = {}
 const actions = {}
@@ -22,5 +23,6 @@ export default new Vuex.Store({
         detail,
         shopcart,
         payabout,
+        userInfo,
     }
 })
